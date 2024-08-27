@@ -9,5 +9,7 @@ region = Rect2(432, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_lu8hs")
+name = "Player"
 texture = SubResource("AtlasTexture_k0mj2")
 color = Color(1, 1, 1, 1)
+blocks_movement = true

@@ -9,10 +9,14 @@ const tile_types = {
 var width: int
 var height: int
 var tiles: Array[Tile]
+var entities: Array[Entity]
+var player: Entity
 
-func _init(map_width: int, map_height: int) -> void:
+func _init(map_width: int, map_height: int, _player: Entity) -> void:
 	width = map_width
 	height = map_height
+	player = _player
+	entities = []
 	_setup_tiles()
 
 func _setup_tiles() -> void:
@@ -45,3 +49,9 @@ func is_in_bounds(coordinate: Vector2i) -> bool:
 			0 <= coordinate.y and 
 			coordinate.y < height
 		)
+
+func get_blocking_entity_at_location(grid_position: Vector2i) -> Entity:
+	for entity in entities:
+		if entity.blocks_movement() and entity.grid_position == grid_position:
+			return entity
+	return null
