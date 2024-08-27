@@ -23,10 +23,9 @@ func _clear_fov() -> void:
 		tile.is_in_view = false
 	_fov = []
 
-func _cast_light(map_data: MapData, x: int, y: int, radius: int,row: int, start_slope: float, end_slope: float, xx: int, xy: int, yx: int, yy: int) -> void:
+func _cast_light(map_data: MapData, x: int, y: int, radius: int, row: int, start_slope: float, end_slope: float, xx: int, xy: int, yx: int, yy: int) -> void:
 	if start_slope < end_slope:
 		return
-
 	var next_start_slope: float = start_slope
 	for i in range(row, radius + 1):
 		var blocked: bool = false
@@ -37,13 +36,11 @@ func _cast_light(map_data: MapData, x: int, y: int, radius: int,row: int, start_
 			if start_slope < r_slope:
 				continue
 			elif end_slope > l_slope:
-				continue
+				break
 			var sax: int = dx * xx + dy * xy
 			var say: int = dx * yx + dy * yy
-
-			if((sax < 0 and absi(sax) > x) or (say < 0 and absi(say) > y)):
+			if ((sax < 0 and absi(sax) > x) or (say < 0 and absi(say) > y)):
 				continue
-			
 			var ax: int = x + sax
 			var ay: int = y + say
 			if ax >= map_data.width or ay >= map_data.height:

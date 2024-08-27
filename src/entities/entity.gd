@@ -12,7 +12,7 @@ var grid_position: Vector2i:
 func _init(_map_data: MapData, start_position:Vector2i, entity_definition: EntityDefinition) -> void:
 	centered = false
 	grid_position = start_position
-	self.map_data = _map_data
+	map_data = _map_data
 	set_entity_type(entity_definition)
 
 func move(move_offset: Vector2i) -> void:

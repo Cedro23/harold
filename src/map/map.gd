@@ -21,7 +21,7 @@ func _place_entities() -> void:
 
 func _place_tiles() -> void:
 	for tile in map_data.tiles:
-		add_child(tile)
+		tiles.add_child(tile)
 
 func update_fov(player_position: Vector2i) -> void:
 	field_of_view.update_fov(map_data, player_position, fov_radius)
