@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TileDefinition" load_steps=4 format=3 uid="uid://bcoechp30tn5l"]
 
-[ext_resource type="Script" path="res://src/map/tile_definition.gd" id="1_wd3ui"]
+[ext_resource type="Script" path="res://src/Map/tile_definition.gd" id="1_wd3ui"]
 [ext_resource type="Texture2D" uid="uid://bo0ixuyu1cek4" path="res://assets/images/kenney_1-bit-pack/monochrome-transparent_packed.png" id="2_o04yk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8iq"]
